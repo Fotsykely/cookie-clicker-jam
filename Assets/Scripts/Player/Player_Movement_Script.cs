@@ -1,36 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player_Movement_Script : MonoBehaviour
 {
-    public float speed = 10; 
-    public Rigidbody rb;
-    public bool grounded = true;
+    [SerializeField] private PlayerDataSO data;
+    [SerializeField] private Transform groundCheck;
 
-    // Start is called before the first frame update
-    void Start()
+    private Rigidbody rb;
+    private bool grounded;
+    private InputSystem_Actions inputActions;
+
+    void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        inputActions = new InputSystem_Actions();
+        inputActions.Player.Jump.performed += _ => Jump();
     }
 
-    // Update is called once per frame
+    void OnEnable() => inputActions.Enable();
+    void OnDisable() => inputActions.Disable();
+
     void Update()
     {
-        rb.linearVelocity = new Vector3(Input.GetAxis("Horizontal") * speed,rb.linearVelocity.y,0);
-        if (Input.GetKeyDown(KeyCode.Space) && grounded)
-        {
-            rb.AddForce(0,10,0, ForceMode.Impulse);
-        }
+        grounded = Physics.CheckSphere(groundCheck.position, data.groundDistance, data.groundMask);
+        float move = inputActions.Player.Move.ReadValue<Vector2>().x;
+        rb.linearVelocity = new Vector3(move * data.speed, rb.linearVelocity.y, 0);
     }
 
-    private void OnCollisionStay(Collision collision)
+    private void Jump()
     {
-        grounded = true;
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        grounded = false;
+        if (grounded)
+            rb.AddForce(Vector3.up * data.jumpForce, ForceMode.Impulse);
     }
 }
