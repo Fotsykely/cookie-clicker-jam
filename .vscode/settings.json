@@ -67,6 +67,6 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "cookie-clicker-jam.slnx",
+    "dotnet.defaultSolution": "Cookie-clicker.slnx",
     "dotnet.enableWorkspaceBasedDevelopment": false
 }
