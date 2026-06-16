@@ -43,8 +43,9 @@ public class SwingHandler : MonoBehaviour
 
     private void TryStartSwing()
     {
+        // Anchor on the player's own plane (the world isn't at z=0 in this scene).
         Vector3 dronePos = drone.transform.position;
-        dronePos.z = 0f;
+        dronePos.z = rb.position.z;
 
         float distance = Vector3.Distance(rb.position, dronePos);
         if (distance > data.maxAttachDistance)
@@ -85,7 +86,7 @@ public class SwingHandler : MonoBehaviour
         }
 
         Vector3 v = rb.linearVelocity;
-        v.z = 0f;                                           // keep Z locked to the play plane
+        v.z = 0f;                                           // no depth drift (FreezePositionZ keeps the plane)
         rb.linearVelocity = v;
     }
 
