@@ -22,7 +22,6 @@ public class CameraController : MonoBehaviour
     void OnEnable() => inputActions.Enable();
     void OnDisable() => inputActions.Disable();
 
-    // État initial déterministe, après l'enregistrement des GameEventListener (OnEnable)
     void Start() => Apply(ViewMode.SideView2D);
 
     private void Toggle() =>
@@ -30,10 +29,11 @@ public class CameraController : MonoBehaviour
 
     private void Apply(ViewMode mode)
     {
-        viewMode.Current = mode;                      // 1. état (source de vérité)
+        viewMode.Current = mode;  
         bool is2D = mode == ViewMode.SideView2D;
-        sideViewCam.Priority = is2D ? Active : Idle;  // 2. ses propres vcams → le Brain blende
+        sideViewCam.Priority = is2D ? Active : Idle; 
         topDownCam.Priority = is2D ? Idle : Active;
-        onViewModeChanged.Raise();                    // 3. notifie le player (et UI/anim plus tard)
+        onViewModeChanged.Raise();                   
+        // Debug.Log($"[CameraController] Vue → {mode}"); 
     }
 }
