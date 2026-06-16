@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68f58554b96584e3fa30588175f3aa18, type: 3}
   m_Name: SwingData
   m_EditorClassIdentifier: Assembly-CSharp::SwingDataSO
-  maxAttachDistance: 8
+  maxAttachDistance: 10
   minRopeLength: 1.5
   airControlForce: 15
   releaseBoost: 1.1

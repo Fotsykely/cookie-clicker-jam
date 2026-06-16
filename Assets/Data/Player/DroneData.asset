@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DroneData
   m_EditorClassIdentifier: Assembly-CSharp::DroneDataSO
   droneOffset: {x: 1.5, y: 3}
-  droneFollowSmoothTime: 0.91
+  droneFollowSmoothTime: 0.15
   verticalSmoothTime: 0.45
   groundMask:
     serializedVersion: 2

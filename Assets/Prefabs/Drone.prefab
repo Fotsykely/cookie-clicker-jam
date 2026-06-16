@@ -157,5 +157,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f189afcca232643d3bfae4f1d1bd76d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DroneController
-  data: {fileID: 11400000, guid: 0f8c5477cfa4d400091f60fe352ba2a2, type: 2}
+  data: {fileID: 11400000, guid: f7e05e19e4d844baea639390e92a0b2b, type: 2}
   target: {fileID: 0}
