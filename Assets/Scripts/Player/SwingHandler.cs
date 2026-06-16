@@ -26,8 +26,6 @@ public class SwingHandler : MonoBehaviour
 
     void Start()
     {
-        // Reuse the movement script's input instance (single Enable/Disable for the whole player).
-        // Read in Start so the movement's Awake has already created it.
         inputActions = GetComponent<Player_Movement_Script>().Input;
     }
 
@@ -43,7 +41,7 @@ public class SwingHandler : MonoBehaviour
 
     private void TryStartSwing()
     {
-        // Anchor on the player's own plane (the world isn't at z=0 in this scene).
+        // Anchor on the player's own plane.
         Vector3 dronePos = drone.transform.position;
         dronePos.z = rb.position.z;
 
@@ -98,7 +96,7 @@ public class SwingHandler : MonoBehaviour
         if (rope != null)
             rope.enabled = false;
 
-        // Preserve tangential momentum; just boost and clamp. Do NOT zero it.
+        // Preserve tangential momentum; just boost and clamp.
         rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity * data.releaseBoost, data.maxReleaseSpeed);
 
         onSwingEnd?.Raise();
