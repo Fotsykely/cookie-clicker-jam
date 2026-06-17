@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &37981385 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4559141177006724361, guid: afe27d30bd5ac42faad6dbbc8e74fca4, type: 3}
+  m_PrefabInstance: {fileID: 1416347965}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1416347965
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -127,6 +132,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 111048014760287339, guid: afe27d30bd5ac42faad6dbbc8e74fca4, type: 3}
+      propertyPath: drone
+      value: 
+      objectReference: {fileID: 1711540228}
     - target: {fileID: 2445297946400626605, guid: afe27d30bd5ac42faad6dbbc8e74fca4, type: 3}
       propertyPath: m_Name
       value: Player
@@ -176,6 +185,78 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afe27d30bd5ac42faad6dbbc8e74fca4, type: 3}
+--- !u!1001 &1420437921
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 560153355066090801, guid: 27ea628dbc4b44086b53c5ce4818000f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 560153355066090801, guid: 27ea628dbc4b44086b53c5ce4818000f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 560153355066090801, guid: 27ea628dbc4b44086b53c5ce4818000f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 560153355066090801, guid: 27ea628dbc4b44086b53c5ce4818000f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 560153355066090801, guid: 27ea628dbc4b44086b53c5ce4818000f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 560153355066090801, guid: 27ea628dbc4b44086b53c5ce4818000f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 560153355066090801, guid: 27ea628dbc4b44086b53c5ce4818000f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 560153355066090801, guid: 27ea628dbc4b44086b53c5ce4818000f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 560153355066090801, guid: 27ea628dbc4b44086b53c5ce4818000f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 560153355066090801, guid: 27ea628dbc4b44086b53c5ce4818000f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3384553817548221390, guid: 27ea628dbc4b44086b53c5ce4818000f, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 37981385}
+    - target: {fileID: 5299958722207509293, guid: 27ea628dbc4b44086b53c5ce4818000f, type: 3}
+      propertyPath: m_Name
+      value: Drone
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 27ea628dbc4b44086b53c5ce4818000f, type: 3}
+--- !u!114 &1711540228 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3384553817548221390, guid: 27ea628dbc4b44086b53c5ce4818000f, type: 3}
+  m_PrefabInstance: {fileID: 1420437921}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f189afcca232643d3bfae4f1d1bd76d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DroneController
 --- !u!1001 &3842419705989397878
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -297,3 +378,4 @@ SceneRoots:
   - {fileID: 8259722262580779785}
   - {fileID: 3842419705989397878}
   - {fileID: 1416347965}
+  - {fileID: 1420437921}
