@@ -13,10 +13,15 @@ public class Player_Movement_Script : MonoBehaviour
     private bool jumpRequested;
     private Camera cam;
     private InputSystem_Actions inputActions;
+    private SwingHandler swing;
+
+    // Shared input instance so other player components (e.g. SwingHandler) reuse a single Enable/Disable.
+    public InputSystem_Actions Input => inputActions;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        swing = GetComponent<SwingHandler>();
         inputActions = new InputSystem_Actions();
         inputActions.Player.Jump.performed += _ => jumpRequested = true;
     }
@@ -27,6 +32,11 @@ public class Player_Movement_Script : MonoBehaviour
     void FixedUpdate()
     {
         grounded = Physics.CheckSphere(groundCheck.position, data.groundDistance, data.groundMask);
+
+        // While swinging, the SwingHandler drives the Rigidbody physics directly.
+        if (swing != null && swing.IsSwinging)
+            return;
+
         Vector2 move = inputActions.Player.Move.ReadValue<Vector2>();
 
         rb.linearVelocity = topDown
@@ -58,6 +68,6 @@ public class Player_Movement_Script : MonoBehaviour
     public void ApplyView()
     {
         topDown = viewMode.Current == ViewMode.TopDown3D;
-        // Debug.Log($"[Player] ApplyView → topDown = {topDown}"); 
+        // Debug.Log($"[Player] ApplyView → topDown = {topDown}");
     }
 }

@@ -14,7 +14,6 @@
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
 *.log
-claude.md
 
 # By default unity supports Blender asset imports, *.blend1 blender files do not need to be commited to version control.
 *.blend1
@@ -105,3 +104,5 @@ InitTestScene*.unity*
 
 # Auto-generated cache in Assets folder
 /[Aa]ssets/[Ss]ceneDependencyCache*
+
+claude.md
