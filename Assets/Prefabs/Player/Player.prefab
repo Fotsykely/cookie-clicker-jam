@@ -89,6 +89,8 @@ GameObject:
   - component: {fileID: 111048014760287339}
   - component: {fileID: 6897180301762049831}
   - component: {fileID: 3490146554900170903}
+  - component: {fileID: 8319560620593357981}
+  - component: {fileID: 5842063386771350376}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -225,6 +227,30 @@ CapsuleCollider:
   m_Height: 1.74
   m_Direction: 1
   m_Center: {x: 0.16, y: 0.81, z: 0}
+--- !u!114 &8319560620593357981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2445297946400626605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 512ed00c83cd1764da350cfaec01ebf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FinishLevelScript
+--- !u!114 &5842063386771350376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2445297946400626605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da082fa6a80f777438841c890a4e87fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DeathFloorScript
 --- !u!1 &3692453315170065858
 GameObject:
   m_ObjectHideFlags: 0
