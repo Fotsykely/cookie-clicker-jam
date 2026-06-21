@@ -6,6 +6,9 @@ public class Player_Movement_Script : MonoBehaviour
     [SerializeField] private PlayerDataSO data;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private ViewModeSO viewMode;
+    [SerializeField] private Animator animator;
+
+    private static readonly int SpeedHash = Animator.StringToHash("Speed");
 
     private Rigidbody rb;
     private bool grounded;
@@ -32,6 +35,22 @@ public class Player_Movement_Script : MonoBehaviour
     void FixedUpdate()
     {
         grounded = Physics.CheckSphere(groundCheck.position, data.groundDistance, data.groundMask);
+
+        // Drive the run/idle animation + face the movement direction (works in both side and top-down views).
+        if (animator != null)
+        {
+            Vector3 v = rb.linearVelocity;
+            Vector3 planar = new Vector3(v.x, 0f, v.z);
+            animator.SetFloat(SpeedHash, planar.magnitude);
+
+            // Flip / turn the model toward where it moves (side view: left/right, top-down: full yaw).
+            if (planar.sqrMagnitude > 0.01f)
+            {
+                Quaternion target = Quaternion.LookRotation(planar);
+                animator.transform.rotation = Quaternion.RotateTowards(
+                    animator.transform.rotation, target, data.turnSpeed * Time.fixedDeltaTime);
+            }
+        }
 
         // While swinging, the SwingHandler drives the Rigidbody physics directly.
         if (swing != null && swing.IsSwinging)
