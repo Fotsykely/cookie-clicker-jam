@@ -1312,6 +1312,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 503132873}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &548878551 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3384553817548221390, guid: 27ea628dbc4b44086b53c5ce4818000f, type: 3}
+  m_PrefabInstance: {fileID: 680136416}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f189afcca232643d3bfae4f1d1bd76d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DroneController
 --- !u!1001 &557244764
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1631,6 +1642,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3384553817548221390, guid: 27ea628dbc4b44086b53c5ce4818000f, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 2033819254}
     - target: {fileID: 5299958722207509293, guid: 27ea628dbc4b44086b53c5ce4818000f, type: 3}
       propertyPath: m_Name
       value: Drone
@@ -2489,6 +2504,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 111048014760287339, guid: afe27d30bd5ac42faad6dbbc8e74fca4, type: 3}
+      propertyPath: drone
+      value: 
+      objectReference: {fileID: 548878551}
     - target: {fileID: 2445297946400626605, guid: afe27d30bd5ac42faad6dbbc8e74fca4, type: 3}
       propertyPath: m_Name
       value: Player
@@ -4625,7 +4644,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &1818714189
 AudioListener:
   m_ObjectHideFlags: 0
@@ -5528,6 +5547,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2013400160}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &2033819254 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4559141177006724361, guid: afe27d30bd5ac42faad6dbbc8e74fca4, type: 3}
+  m_PrefabInstance: {fileID: 1229970111}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
